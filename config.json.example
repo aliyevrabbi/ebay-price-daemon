@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "global_deviation_threshold_percent": 0.0,
+    "min_absolute_profit_usd": 5.0,
+    "check_interval_seconds": 30,
+    "proxy_api_url": "https://api.scrape.do/?token=YOUR_PROXY_TOKEN_HERE&url=",
+    "telegram_webhook_url": "https://api.telegram.org/botYOUR_TELEGRAM_BOT_TOKEN_HERE/sendMessage",
+    "request_timeout_seconds": 15,
+    "max_retries": 3,
+    "retry_backoff_seconds": 2.0,
+    "results_per_page": 60
+  },
+  "products": [
+    {
+      "name": "Example Item",
+      "base_market_value": 30.0,
+      "required_keywords": ["keyword1", "keyword2"],
+      "negative_keywords": ["broken", "parts", "repair", "not working", "locked", "cracked", "dead"]
+    }
+  ]
+}

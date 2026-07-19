@@ -1,0 +1,29 @@
+[Unit]
+Description=eBay Price Deviation Daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ebaydaemon
+Group=ebaydaemon
+WorkingDirectory=/opt/ebay-price-daemon
+ExecStart=/opt/ebay-price-daemon/venv/bin/python3 /opt/ebay-price-daemon/main.py
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=20
+KillSignal=SIGTERM
+
+# main.py already writes /opt/ebay-price-daemon/daemon.log itself via
+# --log-file; these just also capture stdout/stderr (crashes, tracebacks).
+StandardOutput=append:/var/log/ebay-price-daemon/service.log
+StandardError=append:/var/log/ebay-price-daemon/service.log
+
+# Light sandboxing. Loosen if your setup needs broader filesystem access.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/opt/ebay-price-daemon /var/log/ebay-price-daemon
+
+[Install]
+WantedBy=multi-user.target
