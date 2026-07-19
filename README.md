@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # eBay Price Deviation Daemon
 
 Async daemon that scans eBay Buy-It-Now search results for configured
