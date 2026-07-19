@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # eBay Price Deviation Daemon
 
 Async daemon that scans eBay Buy-It-Now search results for configured
@@ -130,3 +131,7 @@ proxy/unlocker service you configure — it doesn't try to defeat eBay's
 bot detection itself. Keep `check_interval_seconds` reasonable and make
 sure your use complies with eBay's Terms of Use and your proxy provider's
 terms.
+=======
+# ebay-price-daemon
+Self-hosted eBay price monitor daemon with Telegram alerts and atomic config management.
+>>>>>>> bc7e0c48dfec3822f34b14670b7297b1a2d5b4be
